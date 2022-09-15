@@ -1,0 +1,45 @@
+= https://ladish.org/lanv.html[LANV]
+
+.WORK IN PROGRESS
+[NOTE]
+This is Work In Progress for adapting
+https://drobilla.net/software/flowcanvas.html[flowcanvas] plus
+https://ladish.org/[gladish] augmentations into new C library
+along with adding new features, like port grouping.
+
+The level of API abstraction provided is higher than that of
+https://wiki.gnome.org/Projects/GooCanvas[GooCanvas] and
+https://www.freshports.org/graphics/libgnomecanvas/[gnomecanvas]
+by providing domain specific semantics.
+In case of lanv, domain specific semantics is about
+representing DSP flows.
+
+Uses for such library include visual representation of
+graphs provided in software modules like:
+
+ * https://jackaudio.org/[JACK Audio Connection Kit graph representation]
+ * graph of https://lv2plug.in/[LV2 plugins]
+ * graph of kernel-mode DSP modules
+ * graph of FPGA rendered DSP modules
+
+List of Aimed Features:
+
+ * minimal dependencies, plain C implementation
+ * gladish-canvas/flowcanvas/ganv/HoustonPatchbay-like domain level API
+ * The project aims at providing library(ies)
+   that target diverse raster UI environments:
+  - X11, especially via libxcb
+  - GNOME2/GTK2
+  - GNOME3/GTK3
+  - GNOME40/GTK4
+  - libnsfb
+  - linux framebuffer
+  - sixel over tty
+  - OpenGL
+  - OpenEGL
+  - KDE/Qt
+ * support for multiple lower level canvas layers,
+   as GooCanvas and GnomeCanvas2
+ * port grouping (along with group-connect and group-disconnect)
+ * Despite plain C being used for lanv itself, the project also aims
+   at bindings for Python, C++ and other languages.
