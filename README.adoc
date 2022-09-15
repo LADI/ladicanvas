@@ -1,4 +1,4 @@
-= https://ladish.org/lanv.html[LANV]
+= LANV, lacanvas, LADI Canvas
 
 .WORK IN PROGRESS
 [NOTE]
@@ -6,13 +6,18 @@ This is Work In Progress for adapting
 https://drobilla.net/software/flowcanvas.html[flowcanvas] plus
 https://ladish.org/[gladish] augmentations into new C library
 along with adding new features, like port grouping.
+Beware that in this WIP version of the text,
+present tense may be used for not yet implemented things.
 
-The level of API abstraction provided is higher than that of
-https://wiki.gnome.org/Projects/GooCanvas[GooCanvas] and
+https://ladish.org/lanv.html[LANV] is project for providing canvas
+helper librarieswith level of API abstraction provided higher than
+that of https://wiki.gnome.org/Projects/GooCanvas[GooCanvas] and
 https://www.freshports.org/graphics/libgnomecanvas/[gnomecanvas]
 by providing domain specific semantics.
 In case of lanv, domain specific semantics is about
 representing DSP flows.
+Features from the https://drobilla.net/software/ganv.html[Ganv] library,
+the flowcanvas successor, are also adopted.
 
 Uses for such library include visual representation of
 graphs provided in software modules like:
@@ -26,20 +31,35 @@ List of Aimed Features:
 
  * minimal dependencies, plain C implementation
  * gladish-canvas/flowcanvas/ganv/HoustonPatchbay-like domain level API
- * The project aims at providing library(ies)
+ * The project aims at providing libraries
    that target diverse raster UI environments:
   - X11, especially via libxcb
-  - GNOME2/GTK2
-  - GNOME3/GTK3
-  - GNOME40/GTK4
   - libnsfb
   - linux framebuffer
   - sixel over tty
-  - OpenGL
-  - OpenEGL
-  - KDE/Qt
- * support for multiple lower level canvas layers,
-   as GooCanvas and GnomeCanvas2
+  - Hardware accelerated 2D rendering via:
+    . OpenVG
+  - Hardware accelerated 3D rendering via:
+    . OpenGL and GLX
+    . OpenGL ES and EGL
+  - Toolkit support
+    . GNOME2/GTK2
+    . GNOME3/GTK3
+    . GNOME40/GTK4
+    . KDE/Qt
+ * support for multiple lower level canvas layers, e.g.:
+  - GooCanvas
+  - GnomeCanvas2 (flowcanvas style)
+  - Cairo (ganv style, but without GTK requirement)
  * port grouping (along with group-connect and group-disconnect)
- * Despite plain C being used for lanv itself, the project also aims
-   at bindings for Python, C++ and other languages.
+ * theming support
+ * runtime customizable canvas background
+ * photorealistic rack-mountable and stage-floor renderings
+ * While plain C being used for lanv itself,
+   the project also aims to provide bindings for other languages, e.g.:
+  - Python
+  - Lua
+  - C#
+  - C++
+  - Rust
+  - Vala

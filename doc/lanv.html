@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
 <meta name="generator" content="AsciiDoc 10.2.0" />
-<title><a href="https://ladish.org/lanv.html">LANV</a></title>
+<title>LANV, lacanvas, LADI Canvas</title>
 <style type="text/css">
 /*
  * AsciiDoc 'ladi' theme, based on 'volnitsky' theme for xhtml11 and html5 backends.
@@ -646,7 +646,7 @@ asciidoc.install();
 </head>
 <body class="article">
 <div id="header">
-<h1><a href="https://ladish.org/lanv.html">LANV</a></h1>
+<h1>LANV, lacanvas, LADI Canvas</h1>
 </div>
 <div id="content">
 <div id="preamble">
@@ -704,15 +704,20 @@ PAr9L8j/96+U/w3yCoCXW14B8HLLvwDd67nwZIEPdgAAAABJRU5ErkJggg==" />
 <div class="title">WORK IN PROGRESS</div>This is Work In Progress for adapting
 <a href="https://drobilla.net/software/flowcanvas.html">flowcanvas</a> plus
 <a href="https://ladish.org/">gladish</a> augmentations into new C library
-along with adding new features, like port grouping.</td>
+along with adding new features, like port grouping.
+Beware that in this WIP version of the text,
+present tense may be used for not yet implemented things.</td>
 </tr></table>
 </div>
-<div class="paragraph"><p>The level of API abstraction provided is higher than that of
-<a href="https://wiki.gnome.org/Projects/GooCanvas">GooCanvas</a> and
+<div class="paragraph"><p><a href="https://ladish.org/lanv.html">LANV</a> is project for providing canvas
+helper librarieswith level of API abstraction provided higher than
+that of <a href="https://wiki.gnome.org/Projects/GooCanvas">GooCanvas</a> and
 <a href="https://www.freshports.org/graphics/libgnomecanvas/">gnomecanvas</a>
 by providing domain specific semantics.
 In case of lanv, domain specific semantics is about
-representing DSP flows.</p></div>
+representing DSP flows.
+Features from the <a href="https://drobilla.net/software/ganv.html">Ganv</a> library,
+the flowcanvas successor, are also adopted.</p></div>
 <div class="paragraph"><p>Uses for such library include visual representation of
 graphs provided in software modules like:</p></div>
 <div class="ulist"><ul>
@@ -751,28 +756,13 @@ gladish-canvas/flowcanvas/ganv/HoustonPatchbay-like domain level API
 </li>
 <li>
 <p>
-The project aims at providing library(ies)
+The project aims at providing libraries
    that target diverse raster UI environments:
 </p>
 <div class="ulist"><ul>
 <li>
 <p>
 X11, especially via libxcb
-</p>
-</li>
-<li>
-<p>
-GNOME2/GTK2
-</p>
-</li>
-<li>
-<p>
-GNOME3/GTK3
-</p>
-</li>
-<li>
-<p>
-GNOME40/GTK4
 </p>
 </li>
 <li>
@@ -792,12 +782,51 @@ sixel over tty
 </li>
 <li>
 <p>
-OpenGL
+Hardware accelerated 2D rendering via:
+</p>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+OpenVG
+</p>
+</li>
+</ol></div>
+</li>
+<li>
+<p>
+Hardware accelerated 3D rendering via:
+</p>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+OpenGL and GLX
 </p>
 </li>
 <li>
 <p>
-OpenEGL
+OpenGL ES and EGL
+</p>
+</li>
+</ol></div>
+</li>
+<li>
+<p>
+Toolkit support
+</p>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+GNOME2/GTK2
+</p>
+</li>
+<li>
+<p>
+GNOME3/GTK3
+</p>
+</li>
+<li>
+<p>
+GNOME40/GTK4
 </p>
 </li>
 <li>
@@ -805,13 +834,31 @@ OpenEGL
 KDE/Qt
 </p>
 </li>
+</ol></div>
+</li>
 </ul></div>
 </li>
 <li>
 <p>
-support for multiple lower level canvas layers,
-   as GooCanvas and GnomeCanvas2
+support for multiple lower level canvas layers, e.g.:
 </p>
+<div class="ulist"><ul>
+<li>
+<p>
+GooCanvas
+</p>
+</li>
+<li>
+<p>
+GnomeCanvas2 (flowcanvas style)
+</p>
+</li>
+<li>
+<p>
+Cairo (ganv style, but without GTK requirement)
+</p>
+</li>
+</ul></div>
 </li>
 <li>
 <p>
@@ -820,9 +867,56 @@ port grouping (along with group-connect and group-disconnect)
 </li>
 <li>
 <p>
-Despite plain C being used for lanv itself, the project also aims
-   at bindings for Python, C++ and other languages.
+theming support
 </p>
+</li>
+<li>
+<p>
+runtime customizable canvas background
+</p>
+</li>
+<li>
+<p>
+photorealistic rack-mountable and stage-floor renderings
+</p>
+</li>
+<li>
+<p>
+While plain C being used for lanv itself,
+   the project also aims to provide bindings for other languages, e.g.:
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Python
+</p>
+</li>
+<li>
+<p>
+Lua
+</p>
+</li>
+<li>
+<p>
+C#
+</p>
+</li>
+<li>
+<p>
+C++
+</p>
+</li>
+<li>
+<p>
+Rust
+</p>
+</li>
+<li>
+<p>
+Vala
+</p>
+</li>
+</ul></div>
 </li>
 </ul></div>
 </div>
@@ -832,7 +926,7 @@ Despite plain C being used for lanv itself, the project also aims
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2022-09-15 13:32:10 EEST
+ 2022-09-15 19:47:09 EEST
 </div>
 </div>
 </body>
