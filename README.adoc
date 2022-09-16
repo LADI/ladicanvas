@@ -1,3 +1,5 @@
+:keywords: LADI, canvas, LANV, lacanvas, flowcanvas, Ganv, HoustonPatchbay, GooCanvas, Cairographics
+
 = LANV, lacanvas, LADI Canvas
 
 .WORK IN PROGRESS
