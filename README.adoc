@@ -9,23 +9,27 @@ along with adding new features, like port grouping.
 Beware that in this WIP version of the text,
 present tense may be used for not yet implemented things.
 
-https://ladish.org/lanv.html[LANV] is project for providing canvas
-helper libraries with level of API abstraction provided higher than
-that of https://wiki.gnome.org/Projects/GooCanvas[GooCanvas] and
+https://ladish.org/lanv.html[LANV] is project to provide set of
+libraries useful when creating visual representation of graphs on
+raster display.
+
+Canvas drawing of modular DSP/Audio/MIDI flow and
+finite-state machine graphs like:
+
+ * https://jackaudio.org/[JACK Audio Connection Kit] graphs
+ * graphs of https://lv2plug.in/[LV2 plugins]
+ * graphs of DSP modules in kernel-mode
+ * graphs of DSP modules in FPGA
+
+API with domain specific semantics at level similar to
+https://drobilla.net/software/flowcanvas.html[flowcanvas],
+https://drobilla.net/software/ganv.html[Ganv] and
+https://github.com/Houston4444/HoustonPatchbay[HoustonPatchbay].
+
+Operates on top of lower level canvas library like
+https://wiki.gnome.org/Projects/GooCanvas[GooCanvas],
 https://www.freshports.org/graphics/libgnomecanvas/[gnomecanvas]
-by providing domain specific semantics.
-In case of lanv, domain specific semantics is about
-representing DSP flows.
-Features from the https://drobilla.net/software/ganv.html[Ganv] library,
-the flowcanvas successor, are also adopted.
-
-Uses for such library include visual representation of
-graphs provided in software modules like:
-
- * https://jackaudio.org/[JACK Audio Connection Kit graph representation]
- * graph of https://lv2plug.in/[LV2 plugins]
- * graph of kernel-mode DSP modules
- * graph of FPGA rendered DSP modules
+or https://www.cairographics.org/[Cairo].
 
 Features:
 
@@ -60,7 +64,7 @@ Features:
  * Photo-realistic renderings (liblanv-photo):
   - rack-mountable (liblanv-rack)
   - stage-floor (liblanv-floor)
- * Higher level language bindings for:
+ * Language bindings:
   - Python
   - Lua
   - C#

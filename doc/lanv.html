@@ -709,39 +709,41 @@ Beware that in this WIP version of the text,
 present tense may be used for not yet implemented things.</td>
 </tr></table>
 </div>
-<div class="paragraph"><p><a href="https://ladish.org/lanv.html">LANV</a> is project for providing canvas
-helper libraries with level of API abstraction provided higher than
-that of <a href="https://wiki.gnome.org/Projects/GooCanvas">GooCanvas</a> and
-<a href="https://www.freshports.org/graphics/libgnomecanvas/">gnomecanvas</a>
-by providing domain specific semantics.
-In case of lanv, domain specific semantics is about
-representing DSP flows.
-Features from the <a href="https://drobilla.net/software/ganv.html">Ganv</a> library,
-the flowcanvas successor, are also adopted.</p></div>
-<div class="paragraph"><p>Uses for such library include visual representation of
-graphs provided in software modules like:</p></div>
+<div class="paragraph"><p><a href="https://ladish.org/lanv.html">LANV</a> is project to provide set of
+libraries useful when creating visual representation of graphs on
+raster display.</p></div>
+<div class="paragraph"><p>Canvas drawing of modular DSP/Audio/MIDI flow and
+finite-state machine graphs like:</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
-<a href="https://jackaudio.org/">JACK Audio Connection Kit graph representation</a>
+<a href="https://jackaudio.org/">JACK Audio Connection Kit</a> graphs
 </p>
 </li>
 <li>
 <p>
-graph of <a href="https://lv2plug.in/">LV2 plugins</a>
+graphs of <a href="https://lv2plug.in/">LV2 plugins</a>
 </p>
 </li>
 <li>
 <p>
-graph of kernel-mode DSP modules
+graphs of DSP modules in kernel-mode
 </p>
 </li>
 <li>
 <p>
-graph of FPGA rendered DSP modules
+graphs of DSP modules in FPGA
 </p>
 </li>
 </ul></div>
+<div class="paragraph"><p>API with domain specific semantics at level similar to
+<a href="https://drobilla.net/software/flowcanvas.html">flowcanvas</a>,
+<a href="https://drobilla.net/software/ganv.html">Ganv</a> and
+<a href="https://github.com/Houston4444/HoustonPatchbay">HoustonPatchbay</a>.</p></div>
+<div class="paragraph"><p>Operates on top of lower level canvas library like
+<a href="https://wiki.gnome.org/Projects/GooCanvas">GooCanvas</a>,
+<a href="https://www.freshports.org/graphics/libgnomecanvas/">gnomecanvas</a>
+or <a href="https://www.cairographics.org/">Cairo</a>.</p></div>
 <div class="paragraph"><p>Features:</p></div>
 <div class="ulist"><ul>
 <li>
@@ -817,12 +819,12 @@ Widgets for diverse set of GUI toolkits:
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-GNOME2/GTK2
+GNOME2/GTK2 (liblanv-gtk2)
 </p>
 </li>
 <li>
 <p>
-GNOME3/GTK3
+GNOME3/GTK3 (liblanv-gtk3)
 </p>
 </li>
 <li>
@@ -846,17 +848,17 @@ Usable over range of lower level canvas layers, e.g.:
 <div class="ulist"><ul>
 <li>
 <p>
-GooCanvas (liblacan-goo-gtk3)
+GooCanvas (liblacanvas-goo-gtk3)
 </p>
 </li>
 <li>
 <p>
-GnomeCanvas2, flowcanvas style (liblacan-gnomecanvas-gtk2)
+GnomeCanvas2, flowcanvas style (liblacanvas-gnome2)
 </p>
 </li>
 <li>
 <p>
-Cairo, ganv style, but without GTK requirement. (liblacan-cairo)
+Cairo, ganv style, but without GTK requirement. (liblacanvas-cairo)
 </p>
 </li>
 </ul></div>
@@ -901,7 +903,7 @@ stage-floor (liblanv-floor)
 </li>
 <li>
 <p>
-Higher level language bindings for:
+Language bindings:
 </p>
 <div class="ulist"><ul>
 <li>
@@ -944,7 +946,7 @@ Vala
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2022-09-15 22:37:11 EEST
+ 2022-09-16 11:58:46 EEST
 </div>
 </div>
 </body>
