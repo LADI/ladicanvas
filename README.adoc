@@ -44,14 +44,14 @@ Features:
     . OpenGL and GLX
     . OpenGL ES and EGL
   - Widgets for diverse set of GUI toolkits:
-    . GNOME2/GTK2
-    . GNOME3/GTK3
+    . GNOME2/GTK2 (liblanv-gtk2)
+    . GNOME3/GTK3 (liblanv-gtk3)
     . GNOME40/GTK4
     . KDE/Qt
  * Usable over range of lower level canvas layers, e.g.:
-  - GooCanvas (liblacan-goo-gtk3)
-  - GnomeCanvas2, flowcanvas style (liblacan-gnomecanvas-gtk2)
-  - Cairo, ganv style, but without GTK requirement. (liblacan-cairo)
+  - GooCanvas (liblacanvas-goo-gtk3)
+  - GnomeCanvas2, flowcanvas style (liblacanvas-gnome2)
+  - Cairo, ganv style, but without GTK requirement. (liblacanvas-cairo)
  * Port grouping (along with group-connect and group-disconnect)
  * Native Language Support (via gettext)
  * Colour theme support, including system-wide theme and custom themes.
