@@ -18,4 +18,4 @@ default:
 
 .PHONY: doc/lanv.html
 doc/lanv.html:
-	asciidoc -b html5 -a badges -a data-uri -a icons --theme ladi -o doc/lanv.html README.adoc
+	asciidoc -b html5 -a data-uri -a icons --theme ladi -o doc/lanv.html README.adoc
