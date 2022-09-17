@@ -16,5 +16,6 @@ default:
 	@echo "Read the README.adoc file for more info."
 	@echo ""
 
-doc/lanv.html: README.adoc
-	asciidoc -a data-uri -a icons --theme ladi -o doc/lanv.html README.adoc
+.PHONY: doc/lanv.html
+doc/lanv.html:
+	asciidoc -b html5 -a badges -a data-uri -a icons --theme ladi -o doc/lanv.html README.adoc
